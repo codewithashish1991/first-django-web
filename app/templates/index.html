@@ -1,0 +1,55 @@
+{% extends "public/base.html" %}
+
+{% block title %}
+Text Utils - Home Page
+{% endblock %}
+
+
+{% block content %}
+<h1>Welcome to the text analyzer</h1>
+		<form method="post" action="/analyze">
+			{% csrf_token %}
+			<div>	
+				<input type="hidden" name = "name" value="{{name}}">
+			</div>
+			<div>	
+				<input type="hidden" name = "place" value="{{place}}">
+			</div>
+
+			<div class="form-group">
+				<label for="comment">Text:</label>
+				<textarea class="form-control" rows="5" id="comment" name="string"></textarea>
+			</div>
+			<div class="radio">	
+				<label>
+					<input type="radio" name = "purpose" value="remove_punc">
+					<b>Remove Punctuation </b>
+				</label>
+			</div>
+
+			<div class="radio">	
+				<label>
+					<input type="radio" name = "purpose" value="fullcaps" >
+					<b>Upper Case </b>
+				</label>
+			</div>
+
+			<div class="radio">	
+				<label>
+					<input type="radio" name = "purpose" value="new_line_remover" >
+					<b>New Line Remove </b>
+				</label>
+			</div>
+
+			<div class="radio">	
+				<label>
+					<input type="radio" name = "purpose" value="no_of_char" >
+					<b>Number of Character </b>
+				</label>
+			</div>
+
+			<div><br>	
+				<input type="submit" name = "submit" value="Analyze" class="btn btn-primary">
+			</div>
+		</form>
+{% endblock %}

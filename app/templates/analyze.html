@@ -1,0 +1,26 @@
+
+{% extends "public/base.html" %}
+
+{% block title %}
+Text Utils - Analyze Result
+{% endblock %}
+
+
+{% block content %}
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+ <div class="row">
+	<div class="col-md-5 mx-auto" style="margin-top: 130px;">
+    <!-- Tabs Titles -->
+
+		<h1>Analyzing Your text</h1>
+		<h3>Your Analyzed text :- {{ purpose }}</h3>
+		<p><strong>Result :- </strong> {{ analyzed_text }}</p>
+  	</div>
+</div>
+	
+		
+{% endblock %}
